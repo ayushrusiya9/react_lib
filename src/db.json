@@ -1,0 +1,6 @@
+{
+  "todos": [
+    { "id": 1, "task": "Learn Axios GET", "completed": false },
+    { "id": 2, "task": "Practice POST request", "completed": true }
+  ]
+}
