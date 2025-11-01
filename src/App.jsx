@@ -6,7 +6,6 @@ function App() {
 
   return (
     <>
-      <h1>Learn axios</h1>
       <Todos />
     </>
   )

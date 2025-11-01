@@ -4,6 +4,9 @@ import axios from 'axios'
 const Todos = () => {
     const [data, setData] = useState([])
     const [task, setTask] = useState('')
+    const [editId, setEditId] = useState(null)
+    const [editMode, setEditMode] = useState(false)
+
 
     const BASE_URL = 'http://localhost:3000/todos'
 
@@ -14,6 +17,7 @@ const Todos = () => {
     }
 
     const addTask = () => {
+        if (task.trim() == '') return alert('task can not be empty')
         axios.post(BASE_URL, { task, completed: false })
             .then(() => {
                 setTask('');
@@ -29,6 +33,18 @@ const Todos = () => {
         .then(() => getTodos())
     }
 
+    const del = (id) => {
+        axios.delete(`${BASE_URL}/${id}`)
+        .then(() => getTodos())
+    }
+
+    const edit = (id) =>{
+        axios.get(`${BASE_URL}/${id}`)
+            .then(
+                (res) => console.log(res.data)
+            )
+        
+    }
     useEffect(() => {
         getTodos();
         // axios.get(BASE_URL)
@@ -74,8 +90,12 @@ const Todos = () => {
                             <h4 
                                 style={{textDecoration: e.completed ? "line-through" : "none"}}
                             >{e.task}</h4>
-                            <button style={btn}>Edit</button>
-                            <button style={btn}>Delete</button>
+                            <button style={btn}
+                            onClick={() => edit(`${e.id}`)}
+                            >Edit</button>
+                            <button style={btn}
+                            onClick={() => del(`${e.id}`)}
+                            >Delete</button>
                         </li>
                     ))
                 }
