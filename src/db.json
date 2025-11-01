@@ -1,23 +1,18 @@
 {
   "todos": [
     {
-      "id": "1",
-      "task": "Learn Axios GET",
+      "id": "ddbc",
+      "task": "Watch react tutorial",
       "completed": false
     },
     {
-      "id": "2",
-      "task": "Practice POST request",
+      "id": "4f59",
+      "task": "Learn Python",
       "completed": false
     },
     {
-      "id": "021f",
-      "task": "ayush",
-      "completed": false
-    },
-    {
-      "id": "e904",
-      "task": "watch movie",
+      "id": "cbf7",
+      "task": "Learn sql",
       "completed": false
     }
   ]

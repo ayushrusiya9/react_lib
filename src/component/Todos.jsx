@@ -41,10 +41,26 @@ const Todos = () => {
     const edit = (id) =>{
         axios.get(`${BASE_URL}/${id}`)
             .then(
-                (res) => console.log(res.data)
+                (res) => {
+                    setTask(res.data.task);
+                    setEditId(res.data.id);
+                    setEditMode(true);
+                }
             )
-        
     }
+
+    const update = (id) => {
+        axios.put(`${BASE_URL}/${id}`,{task})
+        .then(
+            () => { 
+                setTask('');
+                setEditMode(false);
+                setEditId(null);
+                getTodos();
+            }
+        )
+    }
+
     useEffect(() => {
         getTodos();
         // axios.get(BASE_URL)
@@ -76,7 +92,8 @@ const Todos = () => {
                     value={task}
                     onChange={(e) => setTask(e.target.value)}
                 />
-                <button onClick={addTask}>Add</button>
+
+                <button onClick={editMode ? () => update(`${editId}`) : addTask}>{editMode ? 'update' : 'Add'}</button>
 
             </div>
             <ul>
