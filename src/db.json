@@ -1,6 +1,34 @@
 {
   "todos": [
-    { "id": 1, "task": "Learn Axios GET", "completed": false },
-    { "id": 2, "task": "Practice POST request", "completed": true }
+    {
+      "id": "1",
+      "task": "Learn Axios GET",
+      "completed": false
+    },
+    {
+      "id": "2",
+      "task": "Practice POST request",
+      "completed": false
+    },
+    {
+      "id": "021f",
+      "task": "ayush",
+      "completed": false
+    },
+    {
+      "id": "e904",
+      "task": "watch movie",
+      "completed": false
+    },
+    {
+      "id": "2a1a",
+      "task": " ",
+      "completed": false
+    },
+    {
+      "id": "fd47",
+      "task": "hju",
+      "completed": false
+    }
   ]
 }
